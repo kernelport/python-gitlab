@@ -16,8 +16,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """Wrapper for the GitLab API."""
 
-from __future__ import print_function
-from __future__ import absolute_import
 import importlib
 import time
 import warnings
