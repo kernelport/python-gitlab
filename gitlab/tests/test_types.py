@@ -15,12 +15,10 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import unittest
-
 from gitlab import types
 
 
-class TestGitlabAttribute(unittest.TestCase):
+class TestGitlabAttribute:
     def test_all(self):
         o = types.GitlabAttribute("whatever")
         assert "whatever" == o.get()
@@ -34,7 +32,7 @@ class TestGitlabAttribute(unittest.TestCase):
         assert None == o._value
 
 
-class TestListAttribute(unittest.TestCase):
+class TestListAttribute:
     def test_list_input(self):
         o = types.ListAttribute()
         o.set_from_cli("foo,bar,baz")
@@ -65,7 +63,7 @@ class TestListAttribute(unittest.TestCase):
         assert "foo" == o.get_for_api()
 
 
-class TestLowercaseStringAttribute(unittest.TestCase):
+class TestLowercaseStringAttribute:
     def test_get_for_api(self):
         o = types.LowercaseStringAttribute("FOO")
         assert "foo" == o.get_for_api()
