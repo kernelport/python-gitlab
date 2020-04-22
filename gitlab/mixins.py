@@ -386,6 +386,7 @@ class SaveMixin(object):
         server_data = self.manager.update(obj_id, updated_data, **kwargs)
         if server_data is not None:
             self._update_attrs(server_data)
+        return server_data
 
 
 class ObjectDeleteMixin(object):
