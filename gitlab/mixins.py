@@ -382,7 +382,8 @@ class SaveMixin(object):
 
         # call the manager
         obj_id = self.get_id()
-        obj_id = obj_id.replace('/', '%2F')
+        if isinstance(obj_id, (str)):
+            obj_id = obj_id.replace('/', '%2F')
         server_data = self.manager.update(obj_id, updated_data, **kwargs)
         if server_data is not None:
             self._update_attrs(server_data)
